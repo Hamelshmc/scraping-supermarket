@@ -17,6 +17,9 @@ BOT_NAME = 'supermarkets'
 SPIDER_MODULES = ['supermarkets.spiders']
 NEWSPIDER_MODULE = 'supermarkets.spiders'
 
+LOG_FORMAT = '%(asctime)s [%(name)s] %(levelname)s: %(message)s'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'supermarkets (+http://www.yourdomain.com)'
@@ -44,23 +47,44 @@ COOKIES_DEBUG = True
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
+    'Accept': '*/*',
+    'Connection': 'keep-alive',
     'Accept-Language': 'es',
 }
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    'supermarkets.middlewares.SupermarketsSpiderMiddleware': 543,
-    'supermarkets.middlewares.SaveStatsInDatabase': 300,
+    'supermarkets.middlewares.SupermarketsSpider.SupermarketsSpiderMiddleware': 543,
+    'supermarkets.middlewares.SaveStatsInDatabase.SaveStatsInDatabaseMiddleware': 300,
 }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+'''
+Default :
+{
+    'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware': 100,
+    'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware': 300,
+    'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware': 350,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': 400,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 500,
+    'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware': 550,
+    'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware': 560,
+    'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware': 580,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 590,
+    'scrapy.downloadermiddlewares.redirect.RedirectMiddleware': 600,
+    'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': 700,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 750,
+    'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware': 830,
+    'scrapy.downloadermiddlewares.stats.DownloaderStats': 850,
+    'scrapy.downloadermiddlewares.httpcache.HttpCacheMiddleware': 900,
+}
+'''
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-    'supermarkets.middlewares.SupermarketsDownloaderMiddleware': 543,
-    'scrapy.downloadermiddlewares.cookies.CookiesMiddleware': 600
+    'supermarkets.middlewares.SupermarketsDownloader.SupermarketsDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -75,8 +99,8 @@ EXTENSIONS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'supermarkets.pipelines.SupermarketsPipeline': 300,
-    'supermarkets.pipelines.JsonWriterPipeline': 500,
+    'supermarkets.pipelines.Supermarkets.SupermarketsPipeline': 300,
+    'supermarkets.pipelines.JsonWriter.JsonWriterPipeline': 500,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -99,3 +123,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+'''
+custom settings
+'''

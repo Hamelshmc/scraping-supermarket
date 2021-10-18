@@ -10,11 +10,6 @@ import json
 from itemadapter import ItemAdapter
 
 
-class SupermarketsPipeline:
-    def process_item(self, item, spider):
-        return item
-
-
 class JsonWriterPipeline:
 
     def open_spider(self, spider):
@@ -27,4 +22,3 @@ class JsonWriterPipeline:
         line = json.dumps(ItemAdapter(item).asdict()) + "\n"
         self.file.write(line)
         return item
-

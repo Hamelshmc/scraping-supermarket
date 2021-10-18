@@ -1,6 +1,8 @@
 # import json
 
 import scrapy
+# from webdriver_manager.chrome import ChromeDriverManager
+from scrapy import signals
 # from scrapy.utils.project import get_project_settings
 from selenium.common.exceptions import (ElementNotInteractableException,
                                         ElementNotVisibleException)
@@ -9,10 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
-from supermarkets.items import SupermarketsItem
-
-# from webdriver_manager.chrome import ChromeDriverManager
-from scrapy import signals
+from supermarkets.items.Supermarkets import SupermarketsItem
 
 
 class GadisSpider(scrapy.Spider):
@@ -51,7 +50,8 @@ class GadisSpider(scrapy.Spider):
             options.add_argument(
                 "user-agent=%s" % "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36")
 
-            driver = Chrome(options=options)
+            driver = Chrome(
+                executable_path='/Users/hamiltonmercadocuellar/Documents/Desarollo/my-projects/python/scrappy/driver/mac/chromedriver', options=options)
             driver.delete_all_cookies()
             # Prevent Selenium Detection
             driver.execute_script(
