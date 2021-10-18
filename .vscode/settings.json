@@ -14,5 +14,6 @@
       "source.organizeImports": true,
     },
   },
-  "python.envFile": "venv"
+  "python.envFile": "venv",
+  "python.pythonPath": "venv/bin/python3"
 }

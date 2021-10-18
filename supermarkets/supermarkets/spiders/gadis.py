@@ -1,7 +1,7 @@
-import json
+# import json
 
 import scrapy
-from scrapy.utils.project import get_project_settings
+# from scrapy.utils.project import get_project_settings
 from selenium.common.exceptions import (ElementNotInteractableException,
                                         ElementNotVisibleException)
 from selenium.webdriver import Chrome, ChromeOptions
@@ -12,17 +12,30 @@ from selenium.webdriver.support.ui import WebDriverWait
 from supermarkets.items import SupermarketsItem
 
 # from webdriver_manager.chrome import ChromeDriverManager
+from scrapy import signals
 
 
 class GadisSpider(scrapy.Spider):
     name = 'gadis'
+    handle_httpstatus_list = [500, 502, 503,
+                              504, 408, 403, 401, 400, 404, 408, 302]
+
     # allowed_domains = ['www.gadisline.com']
     # start_urls = ['http://example.com/']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.failed_urls = []
+
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = super(GadisSpider, cls).from_crawler(crawler, *args, **kwargs)
+        crawler.signals.connect(
+            spider.handle_spider_closed, signals.spider_closed)
+        return spider
+
     def start_requests(self):
         try:
-            settings = get_project_settings()
-            driver_path = settings.get('SELENIUM_DRIVER_EXECUTABLE_PATH')
             options = ChromeOptions()
             options.page_load_strategy = 'normal'
             options.add_argument('--headless=true')
@@ -38,7 +51,7 @@ class GadisSpider(scrapy.Spider):
             options.add_argument(
                 "user-agent=%s" % "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36")
 
-            driver = Chrome(executable_path=driver_path, options=options)
+            driver = Chrome(options=options)
             driver.delete_all_cookies()
             # Prevent Selenium Detection
             driver.execute_script(
@@ -71,27 +84,46 @@ class GadisSpider(scrapy.Spider):
 
             category_elements = wait.until(
                 EC.presence_of_all_elements_located((By.XPATH, xpath_category_links)))
-            cookies = driver.get_cookies()
+            # cookies = driver.get_cookies()
 
-            with open('cookietest.json', 'w', newline='') as outputdata:
-                json.dump(cookies, outputdata)
+            # with open('cookietest.json', 'w', newline='') as outputdata:
+            #     json.dump(cookies, outputdata)
 
             for category in category_elements[0:1]:
                 href = category.get_attribute('href')
                 if(href):
-                    yield scrapy.Request(href)
+                    yield scrapy.Request(href, callback=self.parse)
 
         finally:
             driver.quit()
 
     def parse(self, response):
-        print("===============PARSE=================")
-        print(response.headers.getlist('Set-Cookie'))
-        print("================================")
-        item = SupermarketsItem()
-        xpath_list_products = "//div[@class='product_container']"
-        list_products = response.xpath(xpath_list_products)
-        for product in list_products:
-            item.descripcion = product.xpath(
-                './/p[@class="product_description"]/a/text()').extract_first()
-            yield item
+        if response.status != 200 or len(response.headers) == 0:
+            self.crawler.stats.inc_value('failed_url_count')
+            self.failed_urls.append(response.url)
+            print("===============PARSE != 200=================")
+            print(response.url)
+            print("================================")
+        else:
+            print("===============PARSE=================")
+            print(response.headers)
+            print("================================")
+            item = SupermarketsItem()
+            xpath_list_products = "//div[@class='product_container']"
+            list_products = response.xpath(xpath_list_products)
+            for product in list_products:
+                item.descripcion = product.xpath(
+                    './/p[@class="product_description"]/a/text()').extract_first()
+                yield item
+
+    def handle_spider_closed(self, reason):
+        self.crawler.stats.set_value(
+            'failed_urls', self.failed_urls)
+
+    def process_exception(self, response, exception, spider):
+        ex_class = "%s.%s" % (exception.__class__.__module__,
+                              exception.__class__.__name__)
+        self.crawler.stats.inc_value(
+            'downloader/exception_count', spider=spider)
+        self.crawler.stats.inc_value(
+            'downloader/exception_type_count/%s' % ex_class, spider=spider)
