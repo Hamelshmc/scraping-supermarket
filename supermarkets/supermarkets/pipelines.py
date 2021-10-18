@@ -28,13 +28,3 @@ class JsonWriterPipeline:
         self.file.write(line)
         return item
 
-
-class CookiesPipeline(object):
-
-    def process_request(self, request, spider):
-        with open('./spiders/cookietest.json', 'r', newline='') as inputdata:
-            cookies = json.load(inputdata)
-            print(cookies)
-            for cookie in cookies:
-                request.cookies[cookie['name']] = cookie['value']
-        return request
