@@ -1,0 +1,264 @@
+{
+  "spider_name": "GADIS",
+  "start_timestamp": "2021-10-20 06:49:26",
+  "failed_urls_status": [
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=112110",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=112110&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.13.231:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b583d8320>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.7639777660369873,
+        "download_slot": "185.105.13.231",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.13.231:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=121012",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=121012&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.119.50.160:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58c95140>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.3034069538116455,
+        "download_slot": "185.119.50.160",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.119.50.160:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=121313",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=121313&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.129.105.240:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58700b90>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.48375797271728516,
+        "download_slot": "185.129.105.240",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.129.105.240:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=211910",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=211910&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //46.226.145.203:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b4c3147d0>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.5246901512145996,
+        "download_slot": "46.226.145.203",
+        "download_timeout": 300.0,
+        "proxy": "http: //46.226.145.203:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=211913",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=211913&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.13.231:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58c64e60>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.40647387504577637,
+        "download_slot": "185.105.13.231",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.13.231:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=171012",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=171012&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.234.197:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58b6e500>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.9557938575744629,
+        "download_slot": "185.105.234.197",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.234.197:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=151412",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=151412&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.212.84.139:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b4c3e29b0>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.23528313636779785,
+        "download_slot": "185.212.84.139",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.212.84.139:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=151411",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=151411&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.13.231:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b583ca230>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.40691089630126953,
+        "download_slot": "185.105.13.231",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.13.231:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=141713",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=141713&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.234.197:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58abf190>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.4338979721069336,
+        "download_slot": "185.105.234.197",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.234.197:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=202408",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=202408&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.13.231:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58c6e8c0>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.4280509948730469,
+        "download_slot": "185.105.13.231",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.13.231:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=251215",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=251215&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.66.173.62:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58ba8d20>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.254101037979126,
+        "download_slot": "185.66.173.62",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.66.173.62:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=251612",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=251612&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.14.89:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b4c338690>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.6777479648590088,
+        "download_slot": "185.105.14.89",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.14.89:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=241411",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=241411&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.212.84.139:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58d03640>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.23736000061035156,
+        "download_slot": "185.212.84.139",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.212.84.139:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=242011",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=242011&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.105.13.231:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58d63190>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.4234888553619385,
+        "download_slot": "185.105.13.231",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.105.13.231:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=242013",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=242013&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.129.105.240:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58c7db90>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.43360304832458496,
+        "download_slot": "185.129.105.240",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.129.105.240:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    },
+    {
+      "REFERER": "https: //www.gadisline.com/listado-de-productos/?idListProd=261012",
+      "body": "currentUserId=&orderProducts=&isSearch=false&idCategoryProductType=261012&searchData=&lang=es&resource=productsListInfiniteScroll&checksBrandsFilter=&templateName=template-products-list&productsPage=1&productsListFilterSearch=&currentPostalCode=15001&checksPropertiesFilters=",
+      "proxy": "http: //185.107.153.139:58542",
+      "request": {
+        "_ban": "<generator object response_is_ban at 0x7f1b58834af0>",
+        "_rotating_proxy": true,
+        "depth": 3,
+        "download_latency": 0.41060400009155273,
+        "download_slot": "185.107.153.139",
+        "download_timeout": 300.0,
+        "proxy": "http: //185.107.153.139:58542",
+        "retry_times": 1
+      },
+      "url": "https: //www.gadisline.com/content/themes/gadislineth/view/functions/ajax_apiCinfo.php"
+    }
+  ],
+  "item_scraped_count": 10016,
+  "end_timestamp": "2021-10-20 07:19:54"
+}

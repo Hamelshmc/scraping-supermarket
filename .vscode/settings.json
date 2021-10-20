@@ -15,5 +15,5 @@
     },
   },
   "python.envFile": "venv",
-  "python.pythonPath": "venv/bin/python3"
+  "python.pythonPath": "/home/hamilton/Documents/scraping-supermarket/venv/bin/python"
 }

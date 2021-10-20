@@ -1,0 +1,19 @@
+{
+  "failed_urls_status": [
+    {
+      "url": "https://www.gadisline.com/listado-de-productos/?idListProd=111010",
+      "status": 302
+    }
+  ],
+  "items_scraped": null,
+  "items_dropped": null,
+  "finish_reason": "finished",
+  "end_timestamp": "2021-10-19 11:04:51",
+  "postal_code": "15001",
+  "spider_name": "gadis",
+  "stats": "{'failed_urls_status': [{'url': 'https://www.gadisline.com/listado-de-productos/?idListProd=111010', 'status': 302}], 'scheduler/enqueued': 1, 'downloader/request_bytes': 603, 'robotstxt/response_status_count/200': 1, 'response_received_count': 2, 'elapsed_time_seconds': 18.506921, 'downloader/response_status_count/302': 1, 'log_count/INFO': 12, 'downloader/response_bytes': 1388, 'finish_reason': 'finished', 'robotstxt/response_count': 1, 'downloader/response_status_count/200': 1, 'scheduler/enqueued/memory': 1, 'downloader/response_count': 2, 'failed_url_count': 1, 'failed_urls': ['https://www.gadisline.com/listado-de-productos/?idListProd=111010'], 'downloader/request_method_count/GET': 2, 'robotstxt/request_count': 1, 'log_count/WARNING': 45, 'memusage/max': 57905152, 'memusage/startup': 57905152, 'start_time': datetime.datetime(2021, 10, 19, 11, 4, 32, 791420), 'scheduler/dequeued/memory': 1, 'scheduler/dequeued': 1, 'finish_time': datetime.datetime(2021, 10, 19, 11, 4, 51, 298341), 'downloader/request_count': 2, 'log_count/DEBUG': 64}",
+  "failed_urls": [
+    "https://www.gadisline.com/listado-de-productos/?idListProd=111010"
+  ],
+  "start_timestamp": "2021-10-19 11:04:32"
+}

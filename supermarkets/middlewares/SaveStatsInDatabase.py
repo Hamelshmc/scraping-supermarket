@@ -26,5 +26,9 @@ class SaveStatsInDatabaseMiddleware:
         job['items_scraped'] = stats.get('item_scraped_count')
         job['items_dropped'] = stats.get('item_dropped_count')
         job['finish_reason'] = stats.get('finish_reason')
+        job['failed_urls'] = stats.get('failed_urls')
+        job['failed_urls_status'] = stats.get('failed_urls_status')
+        job['stats'] = repr(stats)
+        job['postal_code'] = spider.postal_code
         with open('stats.json', 'w', newline='') as outputdata:
             json.dump(job, outputdata)

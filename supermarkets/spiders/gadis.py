@@ -1,8 +1,6 @@
 # import json
 
 import scrapy
-# from webdriver_manager.chrome import ChromeDriverManager
-from scrapy import signals
 # from scrapy.utils.project import get_project_settings
 from selenium.common.exceptions import (ElementNotInteractableException,
                                         ElementNotVisibleException)
@@ -12,6 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from supermarkets.items.Supermarkets import SupermarketsItem
+
+# from webdriver_manager.chrome import ChromeDriverManager
+from scrapy import signals
 
 
 class GadisSpider(scrapy.Spider):
@@ -23,8 +24,8 @@ class GadisSpider(scrapy.Spider):
     # start_urls = ['http://example.com/']
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
         self.failed_urls = []
+        self.failed_urls_status = []
 
     @classmethod
     def from_crawler(cls, crawler, *args, **kwargs):
@@ -50,8 +51,7 @@ class GadisSpider(scrapy.Spider):
             options.add_argument(
                 "user-agent=%s" % "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36")
 
-            driver = Chrome(
-                executable_path='/Users/hamiltonmercadocuellar/Documents/Desarollo/my-projects/python/scrappy/driver/mac/chromedriver', options=options)
+            driver = Chrome(options=options)
             driver.delete_all_cookies()
             # Prevent Selenium Detection
             driver.execute_script(
@@ -61,7 +61,7 @@ class GadisSpider(scrapy.Spider):
 
             driver.get(link)
 
-            postal_code = '15001'
+            self.postal_code = '15001'
 
             xpath_postal_code = "//select[@id='cl_postal_code']"
             xpath_button_code = "//button[@tabindex='6']"
@@ -73,7 +73,7 @@ class GadisSpider(scrapy.Spider):
 
             select_postal_code = driver.find_element_by_xpath(
                 xpath_postal_code)
-            Select(select_postal_code).select_by_visible_text(postal_code)
+            Select(select_postal_code).select_by_visible_text(self.postal_code)
 
             driver.find_element_by_xpath(xpath_button_code).click()
 
@@ -101,13 +101,12 @@ class GadisSpider(scrapy.Spider):
         if response.status != 200 or len(response.headers) == 0:
             self.crawler.stats.inc_value('failed_url_count')
             self.failed_urls.append(response.url)
-            print("===============PARSE != 200=================")
-            print(response.url)
-            print("================================")
+            self.failed_urls_status.append(
+                {'url': response.url, 'status': response.status})
         else:
             print("===============PARSE=================")
             print(response.headers)
-            print("================================")
+            print("=====================================")
             item = SupermarketsItem()
             xpath_list_products = "//div[@class='product_container']"
             list_products = response.xpath(xpath_list_products)
@@ -119,6 +118,8 @@ class GadisSpider(scrapy.Spider):
     def handle_spider_closed(self, reason):
         self.crawler.stats.set_value(
             'failed_urls', self.failed_urls)
+        self.crawler.stats.set_value(
+            'failed_urls_status', self.failed_urls_status)
 
     def process_exception(self, response, exception, spider):
         ex_class = "%s.%s" % (exception.__class__.__module__,
